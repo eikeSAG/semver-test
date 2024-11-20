@@ -1,0 +1,14 @@
+name: Test
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4 #Checks the repository out. Always the first thing to do https://github.com/actions/checkout
+      - uses: actions/setup-node@4 #Only needed because we want to test it locally. Otherwise, if released, it will be defined in action.yml https://github.com/actions/setup-node
+        with:
+          node-version: 22
+      - uses: ./ #tells Github to look for the action.yml in this repo and execute it

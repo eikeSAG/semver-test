@@ -7,8 +7,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2 #Checks the repository out. Always the first thing to do https://github.com/actions/checkout
-      - uses: actions/setup-node@v2 #Only needed because we want to test it locally. Otherwise, if released, it will be defined in action.yml https://github.com/actions/setup-node
+# Checks the repository out. Always the first thing to do https://github.com/actions/checkout
+      - uses: actions/checkout@v2
+# Only needed because we want to test it locally. Otherwise, if released, it will be defined in action.yml https://github.com/actions/setup-node
+      - uses: actions/setup-node@v2
         with:
           node-version: 16
-      - uses: ./ #tells Github to look for the action.yml in this repo and execute it
+# tells Github to look for the action.yml in this repo and execute it
+      - uses: ./

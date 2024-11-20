@@ -1,0 +1,5 @@
+name: Eikes Demo Action
+description: This Action is to learn about GitHub-Actions and later transfer it to Azure DevOps.
+runs:
+  using: node22
+  main: src/index.js

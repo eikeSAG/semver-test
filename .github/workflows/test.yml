@@ -10,5 +10,5 @@ jobs:
       - uses: actions/checkout@v4 #Checks the repository out. Always the first thing to do https://github.com/actions/checkout
       - uses: actions/setup-node@v4 #Only needed because we want to test it locally. Otherwise, if released, it will be defined in action.yml https://github.com/actions/setup-node
         with:
-          node-version: 22
+          node-version: 20
       - uses: ./ #tells Github to look for the action.yml in this repo and execute it

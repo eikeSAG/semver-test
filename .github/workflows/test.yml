@@ -12,6 +12,6 @@ jobs:
 # Only needed because we want to test it locally. Otherwise, if released, it will be defined in action.yml https://github.com/actions/setup-node
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 # tells Github to look for the action.yml in this repo and execute it
       - uses: ./

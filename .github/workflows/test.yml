@@ -16,3 +16,7 @@ jobs:
           node-version: 20
 # tells Github to look for the action.yml in this repo and execute it
       - uses: ./
+# executes the action a 2nd time with an input
+      - uses: ./
+        with:
+          person: 'Olaf'

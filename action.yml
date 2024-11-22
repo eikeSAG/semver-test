@@ -1,5 +1,11 @@
 name: Eikes Demo Action
 description: This Action is to learn about GitHub-Actions and later transfer it to Azure DevOps.
+# Inputs for the Action to run
+inputs:
+  person:
+    description: 'The person to greet'
+    required: true
+    default: 'Monalisa Octocat'
 runs:
   using: node20
   main: src/index.js

@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+# Checks the repository out. Always the first thing to do https://github.com/actions/checkout
+      - uses: actions/checkout@v4
+# Only needed because we want to test it locally. Otherwise, if released, it will be defined in action.yml https://github.com/actions/setup-node
+      - uses: actions/setup-node@v4
+        with:
+# Only needed to test action locally in the repository
+          node-version: 20
+      - run: npm ci
+      - run: npm run build
+      - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
